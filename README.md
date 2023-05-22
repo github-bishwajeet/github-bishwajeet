@@ -14,7 +14,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-I'm Bishwajeet Kumar 👨‍💻, a Senior Fullstack Enginner working at TheCodeWork for the past 3 years. With a total experience of 4 years in fullstack development, i've been engaged in the full product development from project planning to product development & testing till its stable release. If i sound interesting to you 😉, visit my social profile to know more or get in touch with me 👇.
+I'm Bishwajeet Kumar 👨‍💻, a Senior Fullstack Enginner working at [TheCodeWork](https://thecodework.com/) for the past 3 years. With a total experience of 4 years in fullstack development, i've been engaged in the full product development from project planning to product development & testing till its stable release. If i sound interesting to you 😉, visit my social profile to know more or get in touch with me 👇.
 
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bishwajeet-kumar-2b044a14a/)
