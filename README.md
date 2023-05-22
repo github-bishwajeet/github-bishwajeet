@@ -18,7 +18,7 @@ I'm Bishwajeet Kumar 👨‍💻, a Senior Fullstack Enginner working at [TheCod
 
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bishwajeet-kumar-2b044a14a/)
-[![jeetstack](https://github.com/github-bishwajeet/github-bishwajeet/assets/38222738/29c5ea58-5721-4ef2-b6f5-6444fe46fe70)](https://github-bishwajeet.github.io/portfolio/)
+[![Jeetstack](https://github-production-user-asset-6210df.s3.amazonaws.com/38222738/239966720-29c5ea58-5721-4ef2-b6f5-6444fe46fe70.png)](https://github-bishwajeet.github.io/portfolio/)
 
 ## Skills
 
