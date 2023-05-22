@@ -42,3 +42,9 @@ I'm Bishwajeet Kumar 👨‍💻, a Senior Fullstack Enginner working at [TheCod
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)
 ![GitLab](https://img.shields.io/badge/-GitLab-FCA121?style=for-the-badge&logo=gitlab)
 ![jquery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+
+## Stats
+
+![Github Stats](https://github-readme-stats.vercel.app/api?username=github-bishwajeet&count_private=true&show_icons=true&include_all_commits=true&theme=prussian&layout=compact)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=github-bishwajeet&hide=TeX&layout=compact&theme=prussian)
+
