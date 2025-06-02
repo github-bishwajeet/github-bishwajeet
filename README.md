@@ -14,7 +14,12 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-I'm Bishwajeet Kumar 👨‍💻, a Senior Fullstack Enginner working at [TheCodeWork](https://thecodework.com/) for the past 2 years. With a total experience of 4 years in fullstack development, i've been engaged in the full product development from project planning to product development & testing till its stable release. If i sound interesting to you 😉, visit my social profile to know more or get in touch with me 👇.
+Hi, I’m Bishwajeet Kumar 👨‍💻
+Senior Fullstack Engineer at TheCodeWork
+
+With over 5 years of hands-on experience in fullstack development, I’ve spent the last 4 years at TheCodeWork driving end-to-end product development — from strategic planning and architecture to building, testing, and delivering stable, scalable solutions. I’m passionate about creating clean, maintainable code and collaborating across teams to bring ideas to life.
+
+If you'd like to connect or learn more about what I do, feel free to explore my social profiles — and let’s build something great together! 😉.
 
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bishwajeet-kumar-2b044a14a/)
@@ -25,6 +30,8 @@ I'm Bishwajeet Kumar 👨‍💻, a Senior Fullstack Enginner working at [TheCod
 ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=for-the-badge&logo=javascript)
 ![Nodejs](https://img.shields.io/badge/-Nodejs-black?style=for-the-badge&logo=Node.js)
 ![Vue](https://img.shields.io/badge/-Vuejs-white?style=for-the-badge&logo=Vue.js)
+![React](https://img.shields.io/badge/-React-black?style=for-the-badge&logo=react)
+![Flutter](https://img.shields.io/badge/-Flutter-black?style=for-the-badge&logo=flutter)
 ![PHP](https://img.shields.io/badge/-Php-black?style=for-the-badge&logo=Php)
 ![LARAVEL](https://img.shields.io/badge/-Laravel-white?style=for-the-badge&logo=Laravel)
 ![Codeigniter](https://img.shields.io/badge/-Codeigniter-black?style=for-the-badge&logo=Codeigniter)
