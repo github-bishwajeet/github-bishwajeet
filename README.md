@@ -29,6 +29,7 @@ If you'd like to connect or learn more about what I do, feel free to explore my 
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=for-the-badge&logo=javascript)
 ![Nodejs](https://img.shields.io/badge/-Nodejs-black?style=for-the-badge&logo=Node.js)
+![Java](https://img.shields.io/badge/-Java-green?style=for-the-badge&logo=Java)
 ![Vue](https://img.shields.io/badge/-Vuejs-white?style=for-the-badge&logo=Vue.js)
 ![React](https://img.shields.io/badge/-React-black?style=for-the-badge&logo=react)
 ![Flutter](https://img.shields.io/badge/-Flutter-black?style=for-the-badge&logo=flutter)
@@ -53,5 +54,4 @@ If you'd like to connect or learn more about what I do, feel free to explore my 
 ## Stats
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username=github-bishwajeet&count_private=true&show_icons=true&include_all_commits=true&theme=prussian&layout=compact)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=github-bishwajeet&hide=TeX&layout=compact&theme=prussian)
 
