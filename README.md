@@ -75,10 +75,6 @@ AWS · GCP · Azure · Cloudflare · Git · GitHub · GitLab
 - GitHub: [github-bishwajeet](https://github.com/github-bishwajeet)
 - Crio: [Profile](https://www.crio.do/)
 
-## GitHub stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=github-bishwajeet&show_icons=true&include_all_commits=true&theme=prussian&layout=compact)
-
 ---
 
 For my work, experience, and writing, visit [JeetStack](https://jeetstack.com/).
