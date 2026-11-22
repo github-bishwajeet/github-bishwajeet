@@ -1,27 +1,79 @@
 # Hi, I'm Bishwajeet Kumar (Jeet)
 
-**Senior Software Engineer at StudioJadu** · Bengaluru, India
+**Senior Software Engineer at StudioJadu**  
+Bengaluru, India · [JeetStack](https://jeetstack.com/)
 
-I build and ship full-stack products, scalable backend systems, and AI-powered applications. My work spans product development from architecture and implementation through testing, deployment, and production reliability.
+I’m a software engineer focused on building and shipping reliable products—from full-stack applications and backend services to distributed systems and AI-powered creative workflows.
 
-I have 5+ years of software engineering experience and enjoy solving practical engineering problems, improving developer workflows, and building maintainable systems with teams.
+At StudioJadu, I work on AI filmmaking and storytelling tools across story creation, image generation, and video workflows. I contribute across architecture, implementation, production reliability, and engineering collaboration, while mentoring engineers and helping turn product requirements into shipped software.
 
-**Explore my work:** [JeetStack](https://jeetstack.com/)
+Previously, I worked across startup and enterprise projects at TheCodeWork and Doutedesk, building web applications, APIs, integrations, and production systems.
 
-## Connect
+## What I work on
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bishwajeet-kumar-2b044a14a/)
-[![Website](https://img.shields.io/badge/Website-JeetStack-111111?style=flat&logo=googlechrome&logoColor=white)](https://jeetstack.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/github-bishwajeet)
+- **AI product engineering:** Building reliable product workflows around story, image, and video generation.
+- **Distributed systems:** Designing service boundaries, APIs, retries, and consistency patterns for production workloads.
+- **Asynchronous processing:** Using queues and workers for media jobs, webhooks, notifications, and other long-running tasks.
+- **Backend architecture:** Building maintainable services, integrations, and data flows.
+- **End-to-end product delivery:** Taking features from requirements and architecture through implementation, testing, deployment, and monitoring.
 
-## What I work with
+## Experience
 
-**Languages:** JavaScript, Java, PHP, HTML, CSS  
-**Frontend:** React, Vue.js, Tailwind CSS, Material UI, Bootstrap  
-**Backend:** Node.js, Laravel, CodeIgniter  
-**Data:** MySQL, Redis  
-**Cloud & Tools:** AWS, Heroku, Git, GitHub, GitLab  
-**Other:** Flutter, Progressive Web Apps (PWAs), jQuery
+- **StudioJadu — Senior Software Engineer** · Aug 2025–Present  
+  AI-powered filmmaking and storytelling products, including story creation, image generation, and video workflows.
+
+- **TheCodeWork — Full-Stack Engineer (SDE III), Project Lead** · Jun 2021–Jul 2025  
+  Full-stack product delivery across startup and enterprise projects, including architecture, sprint ownership, and multi-project coordination.
+
+- **Doutedesk — Senior Software Engineer, Project Lead** · Aug 2020–May 2021  
+  Web applications, REST APIs, mobile integrations, testing, deployment, and production monitoring.
+
+- **Earlier engineering work** · 2019–2020  
+  Laravel/PHP development across event management, ERP, and e-commerce courier systems; also mentored junior developers.
+
+## Selected work
+
+Projects I’ve contributed to or built, across employer, client, and independent work:
+
+- [StudioJadu](https://jeetstack.com/) — AI creative platform
+- [MDware](https://jeetstack.com/) — Commerce integrations
+- [Valora Homes](https://jeetstack.com/) — Real-estate platform
+- [Uprising Homes](https://jeetstack.com/) — Homes and developments
+- [Gaesthetic Room](https://jeetstack.com/) — Clinic operations
+- [Satnam Floral Design](https://jeetstack.com/) — Floral commerce
+- [Calgary Lending](https://jeetstack.com/) — Fintech lending
+- [Merge Community Services](https://jeetstack.com/) — Care operations
+- [Kaler Contracting](https://jeetstack.com/) — General contracting
+
+See the [project portfolio](https://jeetstack.com/) for context on each project and my role.
+
+## Technology
+
+**Languages**  
+JavaScript · TypeScript · Java · PHP · SQL
+
+**Backend & APIs**  
+Node.js · Spring Boot · Laravel · REST APIs · Microservices
+
+**Frontend**  
+React · Next.js · Vue.js · Flutter · Tailwind CSS · Progressive Web Apps
+
+**Data & asynchronous systems**  
+MySQL · MongoDB · Redis · Job queues · Event-driven systems · Webhooks
+
+**Cloud & delivery**  
+AWS · GCP · Azure · Cloudflare · Git · GitHub · GitLab
+
+## Education
+
+**B.Tech — Lovely Professional University**
+
+## Find me online
+
+- Website: [jeetstack.com](https://jeetstack.com/)
+- LinkedIn: [Bishwajeet Kumar](https://www.linkedin.com/in/bishwajeet-kumar-2b044a14a/)
+- GitHub: [github-bishwajeet](https://github.com/github-bishwajeet)
+- Crio: [Profile](https://www.crio.do/)
 
 ## GitHub stats
 
@@ -29,4 +81,4 @@ I have 5+ years of software engineering experience and enjoy solving practical e
 
 ---
 
-*More about my work and experience: [jeetstack.com](https://jeetstack.com/)*
+For my work, experience, and writing, visit [JeetStack](https://jeetstack.com/).
