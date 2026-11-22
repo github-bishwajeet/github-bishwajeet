@@ -3,7 +3,7 @@
 **Senior Software Engineer at StudioJadu**  
 Bengaluru, India · [JeetStack](https://jeetstack.com/)
 
-I’m a software engineer focused on building and shipping reliable products—from full-stack applications and backend services to distributed systems and AI-powered creative workflows.
+I’m a software engineer focused on building and shipping reliable products from full-stack applications and backend services to distributed systems and AI-powered creative workflows.
 
 At StudioJadu, I work on AI filmmaking and storytelling tools across story creation, image generation, and video workflows. I contribute across architecture, implementation, production reliability, and engineering collaboration, while mentoring engineers and helping turn product requirements into shipped software.
 
