@@ -75,6 +75,14 @@
             "fill": "card",
             "icon": null
         },
+        "work_github": {
+            "label": "StudioJadu",
+            "handle": "@jeet-scenarix-ai",
+            "url": "https://github.com/jeet-scenarix-ai",
+            "badge": "work",
+            "fill": "rd",
+            "icon": null
+        },
         "site": {
             "label": "jeetstack.com",
             "handle": "",
@@ -113,10 +121,10 @@
             ],
             "fact": [
                 "Senior SWE",
-                "Aug 2025\u2013Present"
+                "@jeet-scenarix-ai"
             ],
             "tint": "rd",
-            "url": "https://jeetstack.com/"
+            "url": "https://github.com/jeet-scenarix-ai"
         },
         {
             "id": "mdware",
@@ -223,9 +231,9 @@
         }
     ],
     "now": [
+        "Ship StudioJadu work from github.com/jeet-scenarix-ai",
         "Senior Software Engineer at StudioJadu \u2014 AI filmmaking tools",
-        "Open to senior product-engineering roles",
-        "Shipping and writing at JeetStack"
+        "Open to senior product-engineering roles"
     ],
     "now_source": "the owner's current work, read 26 Nov 2026",
     "footer": {
