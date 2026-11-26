@@ -1,0 +1,224 @@
+{
+    "_about": "Hand-kept facts for the profile. Numbers that change by themselves (contributions, streaks, repos, stars) are fetched by scripts/fetch.py.",
+    "user": "github-bishwajeet",
+    "display_name": {
+        "value": "Jeet",
+        "full": "Bishwajeet Kumar",
+        "handle": "jeet"
+    },
+    "role": {
+        "value": "senior software engineer"
+    },
+    "created": {
+        "value": "2018-04-09",
+        "source": "GitHub API users/github-bishwajeet, created_at",
+        "as_of": "2026-11-26"
+    },
+    "tagline": {
+        "value": "Shipping distributed systems and AI pipelines that hold under real load.",
+        "source": "jeetstack.com",
+        "as_of": "2026-11-26"
+    },
+    "whoami_line": {
+        "value": "I build AI product workflows, distributed systems, and backend services that ship to production."
+    },
+    "site_label": {
+        "value": "jeetstack.com"
+    },
+    "terminal_host": {
+        "value": "bengaluru"
+    },
+    "tags": [
+        [
+            "AI products",
+            "rd"
+        ],
+        [
+            "distributed systems",
+            "lx"
+        ],
+        [
+            "async pipelines",
+            "x"
+        ],
+        [
+            "full-stack delivery",
+            "yt"
+        ]
+    ],
+    "links": {
+        "source": "the owner's own profiles",
+        "as_of": "2026-11-26",
+        "linkedin": {
+            "label": "LinkedIn",
+            "handle": "",
+            "url": "https://www.linkedin.com/in/bishwajeet-kumar-2b044a14a/",
+            "badge": "li",
+            "fill": "lx",
+            "icon": null
+        },
+        "github": {
+            "label": "GitHub",
+            "handle": "",
+            "url": "https://github.com/github-bishwajeet",
+            "badge": "gh",
+            "fill": "card",
+            "icon": null
+        },
+        "site": {
+            "label": "jeetstack.com",
+            "handle": "",
+            "url": "https://jeetstack.com/",
+            "badge": "site",
+            "fill": "card",
+            "icon": null
+        }
+    },
+    "location": {
+        "value": "Bengaluru, India",
+        "source": "github.com/github-bishwajeet profile",
+        "as_of": "2026-11-26"
+    },
+    "apps_source": "jeetstack.com portfolio, read 26 Nov 2026. Order: StudioJadu, MDware, Valora Homes, Calgary Lending.",
+    "apps": [
+        {
+            "id": "studiojadu",
+            "name": "StudioJadu",
+            "icon_letter": "SJ",
+            "line": "AI filmmaking and storytelling across story, image, and video workflows.",
+            "status": "current role",
+            "chips": [
+                [
+                    "AI",
+                    "rd"
+                ],
+                [
+                    "Node.js",
+                    "lx"
+                ],
+                [
+                    "queues",
+                    "x"
+                ]
+            ],
+            "fact": [
+                "Senior SWE",
+                "Aug 2025\u2013Present"
+            ],
+            "tint": "rd",
+            "url": "https://jeetstack.com/"
+        },
+        {
+            "id": "mdware",
+            "name": "MDware",
+            "icon_letter": "MD",
+            "line": "Commerce integrations connecting products, payments, and operations.",
+            "status": "shipped",
+            "chips": [
+                [
+                    "integrations",
+                    "lx"
+                ],
+                [
+                    "APIs",
+                    "bd"
+                ],
+                [
+                    "commerce",
+                    "li"
+                ]
+            ],
+            "fact": [
+                "client work",
+                "full-stack"
+            ],
+            "tint": "lx",
+            "url": "https://jeetstack.com/"
+        },
+        {
+            "id": "valora-homes",
+            "name": "Valora Homes",
+            "icon_letter": "VH",
+            "line": "Real-estate platform for homes, listings, and buyer journeys.",
+            "status": "shipped",
+            "chips": [
+                [
+                    "React",
+                    "yt"
+                ],
+                [
+                    "Laravel",
+                    "rd"
+                ],
+                [
+                    "MySQL",
+                    "li"
+                ]
+            ],
+            "fact": [
+                "real estate",
+                "web app"
+            ],
+            "tint": "bd",
+            "url": "https://jeetstack.com/"
+        },
+        {
+            "id": "calgary-lending",
+            "name": "Calgary Lending",
+            "icon_letter": "CL",
+            "line": "Fintech lending product with reliable APIs and production monitoring.",
+            "status": "shipped",
+            "chips": [
+                [
+                    "fintech",
+                    "go"
+                ],
+                [
+                    "APIs",
+                    "lx"
+                ],
+                [
+                    "Node.js",
+                    "x"
+                ]
+            ],
+            "fact": [
+                "lending",
+                "production"
+            ],
+            "tint": "li",
+            "url": "https://jeetstack.com/"
+        }
+    ],
+    "more": [
+        {
+            "name": "Uprising Homes",
+            "url": "https://jeetstack.com/"
+        },
+        {
+            "name": "Gaesthetic Room",
+            "url": "https://jeetstack.com/"
+        },
+        {
+            "name": "Satnam Floral Design",
+            "url": "https://jeetstack.com/"
+        },
+        {
+            "name": "Merge Community Services",
+            "url": "https://jeetstack.com/"
+        },
+        {
+            "name": "Kaler Contracting",
+            "url": "https://jeetstack.com/"
+        }
+    ],
+    "now": [
+        "Senior Software Engineer at StudioJadu \u2014 AI filmmaking tools",
+        "Open to senior product-engineering roles",
+        "Shipping and writing at JeetStack"
+    ],
+    "now_source": "the owner's current work, read 26 Nov 2026",
+    "footer": {
+        "value": "Drawn in a ZazaG-style design system \u00b7 numbers redrawn every night by a GitHub Action"
+    }
+}

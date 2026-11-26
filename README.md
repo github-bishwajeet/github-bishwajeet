@@ -1,80 +1,88 @@
-# Hi, I'm Bishwajeet Kumar (Jeet)
+<a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/hero-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/hero-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg"><img src="assets/hero-light.svg" width="100%" alt="Hi, I&#x27;m Jeet. Shipping distributed systems and AI pipelines that hold under real load."></picture></a>
 
-**Senior Software Engineer at StudioJadu**  
-Bengaluru, India · [JeetStack](https://jeetstack.com/)
+<p align="center">
+<a href="https://www.linkedin.com/in/bishwajeet-kumar-2b044a14a/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-li-dark.svg"><img src="assets/badge-li-light.svg" height="44" alt="LinkedIn"></picture></a>
+<a href="https://github.com/github-bishwajeet"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-gh-dark.svg"><img src="assets/badge-gh-light.svg" height="44" alt="GitHub"></picture></a>
+<a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-site-dark.svg"><img src="assets/badge-site-light.svg" height="44" alt="jeetstack.com"></picture></a>
+</p>
 
-I’m a software engineer focused on building and shipping reliable products, from full-stack applications and backend services to distributed systems and AI-powered creative workflows.
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/github-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/github-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/github-dark.svg"><img src="assets/github-light.svg" width="100%" alt="On GitHub: 16 contributions in the last year, no streak right now, longest streak 26 days, 6,931 contributions since 2018, 5 public repos, 0 stars earned, 0 downloads of my releases."></picture>
 
-At StudioJadu, I work on AI filmmaking and storytelling tools across story creation, image generation, and video workflows. I contribute across architecture, implementation, production reliability, and engineering collaboration, while mentoring engineers and helping turn product requirements into shipped software.
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-6m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-6m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-6m-dark.svg"><img src="assets/graph-6m-light.svg" width="100%" alt="10 contributions in the last 6 months"></picture>
 
-Previously, I worked across startup and enterprise projects at TheCodeWork and Doutedesk, building web applications, APIs, integrations, and production systems.
+<details><summary>Last 12 months: 16 contributions</summary>
 
-## What I work on
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-12m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-12m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-12m-dark.svg"><img src="assets/graph-12m-light.svg" width="100%" alt="16 contributions in the last 12 months"></picture>
 
-- **AI product engineering:** Building reliable product workflows around story, image, and video generation.
-- **Distributed systems:** Designing service boundaries, APIs, retries, and consistency patterns for production workloads.
-- **Asynchronous processing:** Using queues and workers for media jobs, webhooks, notifications, and other long-running tasks.
-- **Backend architecture:** Building maintainable services, integrations, and data flows.
-- **End-to-end product delivery:** Taking features from requirements and architecture through implementation, testing, deployment, and monitoring.
+</details>
 
-## Experience
+<details><summary>2026: 14 contributions</summary>
 
-- **StudioJadu — Senior Software Engineer** · Aug 2025–Present  
-  AI-powered filmmaking and storytelling products, including story creation, image generation, and video workflows.
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2026-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2026-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2026-dark.svg"><img src="assets/graph-2026-light.svg" width="100%" alt="14 contributions in 2026"></picture>
 
-- **TheCodeWork — Full-Stack Engineer (SDE III), Project Lead** · Jun 2021–Jul 2025  
-  Full-stack product delivery across startup and enterprise projects, including architecture, sprint ownership, and multi-project coordination.
+</details>
 
-- **Doutedesk — Senior Software Engineer, Project Lead** · Aug 2020–May 2021  
-  Web applications, REST APIs, mobile integrations, testing, deployment, and production monitoring.
+<details><summary>2025: 2,025 contributions</summary>
 
-- **Earlier engineering work** · 2019–2020  
-  Laravel/PHP development across event management, ERP, and e-commerce courier systems; also mentored junior developers.
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2025-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2025-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2025-dark.svg"><img src="assets/graph-2025-light.svg" width="100%" alt="2,025 contributions in 2025"></picture>
 
-## Selected work
+</details>
 
-Projects I’ve contributed to or built, across employer, client, and independent work:
+<details><summary>2024: 1,989 contributions</summary>
 
-- [StudioJadu](https://jeetstack.com/) — AI creative platform
-- [MDware](https://jeetstack.com/) — Commerce integrations
-- [Valora Homes](https://jeetstack.com/) — Real-estate platform
-- [Uprising Homes](https://jeetstack.com/) — Homes and developments
-- [Gaesthetic Room](https://jeetstack.com/) — Clinic operations
-- [Satnam Floral Design](https://jeetstack.com/) — Floral commerce
-- [Calgary Lending](https://jeetstack.com/) — Fintech lending
-- [Merge Community Services](https://jeetstack.com/) — Care operations
-- [Kaler Contracting](https://jeetstack.com/) — General contracting
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2024-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2024-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2024-dark.svg"><img src="assets/graph-2024-light.svg" width="100%" alt="1,989 contributions in 2024"></picture>
 
-See the [project portfolio](https://jeetstack.com/) for context on each project and my role.
+</details>
 
-## Technology
+<details><summary>2023: 1,079 contributions</summary>
 
-**Languages**  
-JavaScript · TypeScript · Java · PHP · SQL
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2023-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2023-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2023-dark.svg"><img src="assets/graph-2023-light.svg" width="100%" alt="1,079 contributions in 2023"></picture>
 
-**Backend & APIs**  
-Node.js · Spring Boot · Laravel · REST APIs · Microservices
+</details>
 
-**Frontend**  
-React · Next.js · Vue.js · Flutter · Tailwind CSS · Progressive Web Apps
+<details><summary>2022: 1,102 contributions</summary>
 
-**Data & asynchronous systems**  
-MySQL · MongoDB · Redis · Job queues · Event-driven systems · Webhooks
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2022-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2022-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2022-dark.svg"><img src="assets/graph-2022-light.svg" width="100%" alt="1,102 contributions in 2022"></picture>
 
-**Cloud & delivery**  
-AWS · GCP · Azure · Cloudflare · Git · GitHub · GitLab
+</details>
 
-## Education
+<details><summary>2021: 546 contributions</summary>
 
-**B.Tech — Lovely Professional University**
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2021-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2021-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2021-dark.svg"><img src="assets/graph-2021-light.svg" width="100%" alt="546 contributions in 2021"></picture>
 
-## Find me online
+</details>
 
-- Website: [jeetstack.com](https://jeetstack.com/)
-- LinkedIn: [Bishwajeet Kumar](https://www.linkedin.com/in/bishwajeet-kumar-2b044a14a/)
-- GitHub: [github-bishwajeet](https://github.com/github-bishwajeet)
-- Crio: [Profile](https://www.crio.do/)
+<details><summary>2020: 175 contributions</summary>
 
----
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2020-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2020-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2020-dark.svg"><img src="assets/graph-2020-light.svg" width="100%" alt="175 contributions in 2020"></picture>
 
-For my work, experience, and writing, visit [JeetStack](https://jeetstack.com/).
+</details>
+
+<details><summary>2019: 0 contributions</summary>
+
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2019-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2019-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2019-dark.svg"><img src="assets/graph-2019-light.svg" width="100%" alt="0 contributions in 2019"></picture>
+
+</details>
+
+<details><summary>2018: 1 contribution</summary>
+
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2018-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2018-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2018-dark.svg"><img src="assets/graph-2018-light.svg" width="100%" alt="1 contribution in 2018"></picture>
+
+</details>
+
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/line-30d-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/line-30d-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/line-30d-dark.svg"><img src="assets/line-30d-light.svg" width="100%" alt="5 contributions in the last 30 days"></picture>
+
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/whoami-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/whoami-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/whoami-dark.svg"><img src="assets/whoami-light.svg" width="100%" alt="whoami: jeet, senior software engineer, Bengaluru, India. I build AI product workflows, distributed systems, and backend services that ship to production. Now: Senior Software Engineer at StudioJadu — AI filmmaking tools. Open to senior product-engineering roles. Shipping and writing at JeetStack."></picture>
+
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/label-ship-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/label-ship-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/label-ship-dark.svg"><img src="assets/label-ship-light.svg" width="100%" alt="What I ship"></picture>
+
+<p align="center">
+<a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-studiojadu-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-studiojadu-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-studiojadu-dark.svg"><img src="assets/app-studiojadu-light.svg" width="49%" alt="StudioJadu: AI filmmaking and storytelling across story, image, and video workflows. Current role, Senior SWE, Aug 2025–Present."></picture></a>
+<a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-mdware-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-mdware-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-mdware-dark.svg"><img src="assets/app-mdware-light.svg" width="49%" alt="MDware: Commerce integrations connecting products, payments, and operations. Shipped, client work, full-stack."></picture></a>
+<a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-valora-homes-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-valora-homes-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-valora-homes-dark.svg"><img src="assets/app-valora-homes-light.svg" width="49%" alt="Valora Homes: Real-estate platform for homes, listings, and buyer journeys. Shipped, real estate, web app."></picture></a>
+<a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-calgary-lending-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-calgary-lending-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-calgary-lending-dark.svg"><img src="assets/app-calgary-lending-light.svg" width="49%" alt="Calgary Lending: Fintech lending product with reliable APIs and production monitoring. Shipped, lending, production."></picture></a>
+</p>
+
+<p align="center"><sub>more ships: <a href="https://jeetstack.com/">Uprising Homes</a> · <a href="https://jeetstack.com/">Gaesthetic Room</a> · <a href="https://jeetstack.com/">Satnam Floral Design</a> · <a href="https://jeetstack.com/">Merge Community Services</a> · <a href="https://jeetstack.com/">Kaler Contracting</a></sub></p>
+
+<p align="center"><sub>Drawn in a ZazaG-style design system · numbers redrawn every night by a GitHub Action · <a href="https://jeetstack.com/">jeetstack.com</a></sub></p>
