@@ -19,7 +19,7 @@ def line_title(data, today):
 def cache_bust(data):
     """Token embedded in asset filenames so GitHub profile images refresh after redesigns.
     Query strings do not work: /raw/ redirects drop them before raw.githubusercontent.com."""
-    return data["today"].replace("-", "") + "blue"
+    return data["today"].replace("-", "") + "nameblue"
 
 
 def asset_stem(name, bust=""):

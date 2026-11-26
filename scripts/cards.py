@@ -113,12 +113,12 @@ def display_name(P):
 
 
 def name_line(s, x, base, size, P):
-    """'Hi, I'm <name>' with the name on a red highlight."""
+    """'Hi, I'm <name>' with the name on a blue highlight."""
     name = display_name(P)
     prefix = "Hi, I'm "
     w1 = text_width(prefix, "f700", size)
     wz = text_width(name, "f700", size)
-    s.rect(x + w1 - size * 0.14, base - size * 0.93, wz + size * 0.28, size * 1.2, "yt", size * 0.2)
+    s.rect(x + w1 - size * 0.14, base - size * 0.93, wz + size * 0.28, size * 1.2, "lx", size * 0.2)
     s.text(x, base, prefix + name, "f700", size)
 
 
