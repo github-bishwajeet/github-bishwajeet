@@ -17,17 +17,35 @@ def line_title(data, today):
     return title_of(total_of(last_days(data, today)), "in the last 30 days")
 
 
+def cache_bust(data):
+    """Token embedded in asset filenames so GitHub profile images refresh after redesigns.
+    Query strings do not work: /raw/ redirects drop them before raw.githubusercontent.com."""
+    return data["today"].replace("-", "") + "oss"
+
+
+def asset_stem(name, bust=""):
+    return f"assets/{name}.{bust}" if bust else f"assets/{name}"
+
+
+def bust_filename(filename, bust):
+    """github-light.svg + bust -> github.{bust}-light.svg (same for phone/dark variants)."""
+    if not bust:
+        return filename
+    for suffix in ("-phone-dark.svg", "-phone-light.svg", "-dark.svg", "-light.svg"):
+        if filename.endswith(suffix):
+            return f"{filename[:-len(suffix)]}.{bust}{suffix}"
+    return filename
+
+
 def picture(name, width, alt, phone=False, bust=""):
-    """GitHub's camo CDN caches profile images by URL; bust changes the query so refreshes show."""
-    a = f"assets/{name}"
-    q = f"?v={bust}" if bust else ""
+    a = asset_stem(name, bust)
     srcs = []
     if phone:
-        srcs.append(f'<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="{a}-phone-dark.svg{q}">')
-        srcs.append(f'<source media="(max-width: 600px)" srcset="{a}-phone-light.svg{q}">')
-    srcs.append(f'<source media="(prefers-color-scheme: dark)" srcset="{a}-dark.svg{q}">')
+        srcs.append(f'<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="{a}-phone-dark.svg">')
+        srcs.append(f'<source media="(max-width: 600px)" srcset="{a}-phone-light.svg">')
+    srcs.append(f'<source media="(prefers-color-scheme: dark)" srcset="{a}-dark.svg">')
     attr = f'height="{width[1:]}"' if width.startswith("h") else f'width="{width}"'
-    return f'<picture>{"".join(srcs)}<img src="{a}-light.svg{q}" {attr} alt="{escape(alt, quote=True)}"></picture>'
+    return f'<picture>{"".join(srcs)}<img src="{a}-light.svg" {attr} alt="{escape(alt, quote=True)}"></picture>'
 
 
 def link(url, inner):
@@ -48,8 +66,7 @@ def link_items(P):
 
 def render(data, P):
     L = P["links"]
-    # Include design stamp so same-day visual pushes still bust camo (date alone is not enough).
-    bust = data["today"].replace("-", "") + "oss"
+    bust = cache_bust(data)
     out = [link(L["site"]["url"], picture("hero", "100%", hero_label(P, data), "hero" in PHONE, bust)), ""]
     badges = []
     for item in link_items(P):

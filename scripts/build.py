@@ -107,13 +107,15 @@ def run(offline=False, record=False, out_root=ROOT, state_path=None, today=None,
             today = datetime.now(timezone.utc).date()
     data, new_state, notes = fetch.collect(net, P, today, state)
     svgs = make_assets(data, P)
+    bust = readme.cache_bust(data)
     files, warnings = {}, []
     for name, s in svgs.items():
-        files[f"assets/{name}"] = s.render()
+        out = readme.bust_filename(name, bust)
+        files[f"assets/{out}"] = s.render()
         if s.overflow:
-            warnings.append(f"{name}: text runs past the edge: {s.overflow}")
-        if len(files[f"assets/{name}"]) > KB_LIMIT * 1024:
-            warnings.append(f"{name}: {len(files[f'assets/{name}']) // 1024} KB is over {KB_LIMIT} KB")
+            warnings.append(f"{out}: text runs past the edge: {s.overflow}")
+        if len(files[f"assets/{out}"]) > KB_LIMIT * 1024:
+            warnings.append(f"{out}: {len(files[f'assets/{out}']) // 1024} KB is over {KB_LIMIT} KB")
     files["README.md"] = readme.render(data, P)
     # only now touch the disk
     assets_dir = os.path.join(out_root, "assets")
