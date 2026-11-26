@@ -98,7 +98,9 @@ def sticker_link(s, x, y, w, h, size, label, rot=5):
     s.add(f'<g transform="rotate({rot} {cx} {cy})">')
     s.rect(x + 4, y + 4, w, h, "line", 10)
     s.rect(x, y, w, h, "pop", 10, "line", 2)
-    s.text(cx, cy + size * 0.36, label, "f700", size, "on-pop", "middle")
+    # semi-bold with a little tracking — less heavy than the hero name
+    s.text(cx, cy + size * 0.36, label, "f600", size, "on-pop", "middle",
+           extra='letter-spacing="0.08em"')
     s.add("</g>")
 
 
@@ -129,8 +131,9 @@ def site_label(P):
 
 
 def sticker_size_for(label, size=20):
-    """Width for the tilted site sticker from its label."""
-    return max(110, int(text_width(label, "f700", size) + 28))
+    """Width for the tilted site sticker from its label (includes letter-spacing)."""
+    tracking = size * 0.08 * max(0, len(label) - 1)
+    return max(110, int(text_width(label, "f600", size) + tracking + 28))
 
 
 # ---------------------------------------------------------------- hero
@@ -143,12 +146,12 @@ def hero(t, data, P):
     name_line(s, x0, 106, 58, P)
     tag = P["tagline"]["value"]
     site = site_label(P)
-    sw = sticker_size_for(site, 20)
+    sw = sticker_size_for(site, 16)
     s.text(x0, 150, tag, "f500", fit_size(tag, "f500", 21, 880 - x0 - sw - 40, 18), "muted")
     cx = x0
     for label, fill in tags_of(P):
         cx += s.chip(cx, 170, label, fill, "f600", 15, 32, 13, 2, 9, 3) + 14
-    sticker_link(s, 880 - sw - 30, 34, sw, 44, 20, site)
+    sticker_link(s, 880 - sw - 30, 36, sw, 40, 16, site)
     return s
 
 

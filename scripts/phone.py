@@ -23,12 +23,12 @@ def hero_phone(t, data, P):
         places.append((cx, cy, lab, fill))
         cx += w + 12
     site = site_label(P)
-    sw = min(140, sticker_size_for(site, 17))
+    sw = min(140, sticker_size_for(site, 14))
     s = Svg(440, int(cy + 32 + 28), t, hero_label(P, data))
     s.board()
     s.zlogo(26, 26, 76, display_name(P)[:1].upper())
     name_line(s, 116, 84, 42, P)
-    sticker_link(s, 440 - sw - 24, 16, sw, 34, 17, site)
+    sticker_link(s, 440 - sw - 24, 18, sw, 30, 14, site)
     ly = 132
     for line in tag_lines:
         s.text(26, ly, line, "f500", 20, "muted")

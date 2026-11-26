@@ -118,15 +118,40 @@ class Svg:
         self.add(f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" rx="{r}" fill="{self.col(fill)}"{s} {extra}/>')
 
     def board(self, x=1, y=1, w=None, h=None, dots=True, stroke=True):
+        """Cream sticker board with a faint digital code-matrix rain."""
         w = w or self.w - 2; h = h or self.h - 2
-        pid = self.uid("dots")
+        pid = self.uid("matrix")
         if dots:
-            dot = self.col("muted")
-            self.defs.append(f'<pattern id="{pid}" width="22" height="22" patternUnits="userSpaceOnUse">'
-                             f'<circle cx="11" cy="11" r="1.3" fill="{dot}" opacity="{0.22 if self.theme == "light" else 0.16}"/></pattern>')
+            ink = self.col("muted")
+            base = 0.10 if self.theme == "light" else 0.09
+            # Cascading mono glyphs in columns — denser near the "head" of each stream.
+            cols = [
+                (6,  "01A7F3",   [0.55, 0.35, 0.22, 0.14, 0.10, 0.07]),
+                (18, "C0DE9B",   [0.18, 0.45, 0.30, 0.18, 0.11, 0.07]),
+                (30, "7E2F1A",   [0.12, 0.20, 0.50, 0.32, 0.16, 0.09]),
+                (42, "B4D801",   [0.08, 0.14, 0.22, 0.48, 0.28, 0.12]),
+                (54, "9F3C2E",   [0.10, 0.16, 0.24, 0.18, 0.52, 0.30]),
+                (66, "E7A014",   [0.07, 0.12, 0.18, 0.26, 0.20, 0.48]),
+            ]
+            parts = [f'<pattern id="{pid}" width="78" height="72" patternUnits="userSpaceOnUse">']
+            chars = set()
+            for cx, stream, opacities in cols:
+                for i, (ch, rel) in enumerate(zip(stream, opacities)):
+                    chars.add(ch)
+                    o = max(0.05, min(0.6, base * 4.2 * rel))
+                    gy = 12 + i * 11
+                    parts.append(
+                        f'<text x="{cx}" y="{gy}" font-family="ZM" font-weight="500" font-size="10" '
+                        f'fill="{ink}" text-anchor="middle" opacity="{o:.3f}">{escape(ch)}</text>')
+            parts.append("</pattern>")
+            self.defs.append("".join(parts))
+            self.used["m500"].update(chars)
         self.rect(x, y, w, h, "bg", 18, "line" if stroke else None, 2)
         if dots:
             self.add(f'<rect x="{x + 1}" y="{y + 1}" width="{w - 2}" height="{h - 2}" rx="17" fill="url(#{pid})"/>')
+            if stroke:
+                # redraw border on top so the matrix fill never covers the ink edge
+                self.rect(x, y, w, h, "none", 18, "line", 2)
 
     def card(self, x, y, w, h, fill="card", r=18, shadow=4, sw=2, rot=0, dashed=False, extra=""):
         g = f'<g transform="rotate({rot} {x + w / 2:.1f} {y + h / 2:.1f})">' if rot else "<g>"

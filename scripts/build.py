@@ -71,8 +71,10 @@ def numbers(data, P):
         ("current streak", streak, gh),
         ("longest streak", f"{best['days']} days, {best['start']} to {best['end']}", gh),
         ("public repos (non-fork)", str(r["public_repos"]), f"api.github.com/users/{P['user']}/repos"),
-        ("stars earned", str(r["stars"]), f"api.github.com/users/{P['user']}/repos"),
-        ("release downloads", fmt_(r["downloads"]), "api.github.com repos/*/releases"),
+        ("OSS repos created", str(r.get("oss_created") or 0),
+         "owned public projects + profile.oss.created_extra"),
+        ("OSS repos contributed", str(r.get("oss_contributed") or 0),
+         "api.github.com search commits/issues outside own accounts"),
         ("challenge", ch, (P.get("challenge_url") or {}).get("value") or "profile.json"),
     ]
     videos = (data.get("videos") or {}).get("videos") or []

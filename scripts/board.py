@@ -18,14 +18,15 @@ def counters(data):
     c, r = data["contrib"], data["repos"]
     cur, best = c["current_streak"], c["longest_streak"]
     since = f"contributions since {c['since_year']}"
+    # OSS created / contributed replace empty stars & release downloads.
     return [
         (fmt(c["last_year"]), "contributions in the last year"),
         (f"{cur['days']} days", streak_text(cur)),
         (f"{best['days']} days", "longest streak ever"),
         (fmt(c["all_time"]), since),
         (fmt(r["public_repos"]), "public repos"),
-        (fmt(r["stars"]), "stars earned"),
-        (fmt(r["downloads"]), "release downloads"),
+        (fmt(r.get("oss_created") or 0), "OSS repos created"),
+        (fmt(r.get("oss_contributed") or 0), "OSS contributed"),
     ]
 
 
@@ -38,7 +39,8 @@ def board_label(data):
     across = f" across {' + '.join(accounts)}" if len(accounts) > 1 else ""
     return (f"On GitHub{across}: {fmt(c['last_year'])} contributions in the last year, {streak}, "
             f"longest streak {best['days']} days, {fmt(c['all_time'])} contributions since {c['since_year']}, "
-            f"{r['public_repos']} public repos, {r['stars']} stars earned, {fmt(r['downloads'])} downloads of my releases.")
+            f"{r['public_repos']} public repos, {r.get('oss_created') or 0} OSS repos created, "
+            f"{r.get('oss_contributed') or 0} OSS repos contributed.")
 
 
 def sticker(s, x, y, w, h, fill, rot):
@@ -56,14 +58,17 @@ ICONS = {
                ("M17 6H20V8A3 3 0 0 1 17 11", False), ("M12 15V19", False), ("M8 20.5H16", False)],
     "chart": [("M4 20V12H8V20Z", True), ("M10 20V5H14V20Z", True), ("M16 20V9H20V20Z", True)],
     "folder": [("M3 7A2 2 0 0 1 5 5H9L11 7.5H19A2 2 0 0 1 21 9.5V18A2 2 0 0 1 19 20H5A2 2 0 0 1 3 18Z", True)],
-    "star": [("M12 3L14.7 8.6L20.8 9.5L16.4 13.8L17.4 19.9L12 17L6.6 19.9L7.6 13.8L3.2 9.5L9.3 8.6Z", True)],
-    "download": [("M10 3H14V9H18L12 16L6 9H10Z", True), ("M4 18.5H20V21H4Z", True)],
+    # OSS created / contributed
+    "code": [("M8 6L3 12L8 18", False), ("M16 6L21 12L16 18", False)],
+    "git": [("M12 3V21", False), ("M12 8A3 3 0 1 0 12 2A3 3 0 0 0 12 8Z", True),
+            ("M12 22A3 3 0 1 0 12 16A3 3 0 0 0 12 22Z", True),
+            ("M18 8A3 3 0 1 0 18 2A3 3 0 0 0 18 8Z", True), ("M12 5H18", False)],
 }
-ICON_OF = ["calendar", "flame", "trophy", "chart", "folder", "star", "download"]
+ICON_OF = ["calendar", "flame", "trophy", "chart", "folder", "code", "git"]
 
 
 def icon(s, kind, x, y, size, fill="pop"):
-    """A sticker-style icon: ink outline from the tokens, one token fill, drawn from inline paths."""
+    """GitHub board icons: dark ink outline with lime-lemon fill on closed shapes."""
     k = size / 24
     parts = "".join(f'<path d="{d}" fill="{s.col(fill) if closed else "none"}"/>' for d, closed in ICONS[kind])
     s.add(f'<g transform="translate({x:.1f} {y:.1f}) scale({k:.3f})" stroke="{s.col("line")}" stroke-width="{1.9 / k:.2f}" '

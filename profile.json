@@ -24,6 +24,20 @@
             }
         }
     ],
+    "oss": {
+        "_about": "Open-source counters on the GitHub board. Non-fork public repos count as created (profile README excluded). created_extra adds maintained forks featured as OSS (e.g. Chattle on jeetstack). Work orgs and noise repos are skipped for contributions.",
+        "created_extra": [
+            "github-bishwajeet/chattle"
+        ],
+        "exclude_repos": [],
+        "exclude_orgs": [
+            "Scenarix"
+        ],
+        "exclude_contributed": [
+            "lianxuefuzhu/lianxue",
+            "tim1207/OS-Assignment"
+        ]
+    },
     "tagline": {
         "value": "Shipping distributed systems and AI pipelines that hold under real load.",
         "source": "jeetstack.com",
@@ -90,6 +104,14 @@
             "badge": "site",
             "fill": "card",
             "icon": null
+        },
+        "crio": {
+            "label": "Crio",
+            "handle": "",
+            "url": "https://www.crio.do/learn/portfolio/bishwajeetk003/",
+            "badge": "crio",
+            "fill": "yt",
+            "icon": null
         }
     },
     "location": {
@@ -97,7 +119,7 @@
         "source": "github.com/github-bishwajeet profile",
         "as_of": "2026-11-26"
     },
-    "apps_source": "jeetstack.com portfolio, read 26 Nov 2026. Order: StudioJadu, MDware, Valora Homes, Calgary Lending.",
+    "apps_source": "jeetstack.com portfolio, read 26 Nov 2026. Order: StudioJadu, MDware, Valora Homes, Gaesthetic Room.",
     "apps": [
         {
             "id": "studiojadu",
@@ -181,28 +203,28 @@
             "url": "https://jeetstack.com/"
         },
         {
-            "id": "calgary-lending",
-            "name": "Calgary Lending",
-            "icon_letter": "CL",
-            "line": "Fintech lending product with reliable APIs and production monitoring.",
+            "id": "gaesthetic-room",
+            "name": "Gaesthetic Room",
+            "icon_letter": "GR",
+            "line": "Clinic operations for appointments, patients, and care workflows.",
             "status": "shipped",
             "chips": [
                 [
-                    "fintech",
-                    "go"
+                    "clinic ops",
+                    "li"
                 ],
                 [
                     "APIs",
                     "lx"
                 ],
                 [
-                    "Node.js",
-                    "x"
+                    "full-stack",
+                    "yt"
                 ]
             ],
             "fact": [
-                "lending",
-                "production"
+                "healthcare",
+                "operations"
             ],
             "tint": "li",
             "url": "https://jeetstack.com/"
@@ -214,7 +236,7 @@
             "url": "https://jeetstack.com/"
         },
         {
-            "name": "Gaesthetic Room",
+            "name": "Calgary Lending",
             "url": "https://jeetstack.com/"
         },
         {

@@ -44,7 +44,21 @@
      "description": "",
      "language": "TypeScript"
     }
-   }
+   },
+   "oss_created": 5,
+   "oss_contributed": 3,
+   "oss_created_repos": [
+    "github-bishwajeet/chattle",
+    "github-bishwajeet/kemuri",
+    "github-bishwajeet/pepe",
+    "github-bishwajeet/quill-todo-list-toolbar",
+    "github-bishwajeet/scenarix-optimize-assignment"
+   ],
+   "oss_contributed_repos": [
+    "jamesratcliffe/ls-retail-guzzle",
+    "syedMSohaib/jitsi-meet-laravel",
+    "uiverse-io/galaxy"
+   ]
   }
  },
  "years": {

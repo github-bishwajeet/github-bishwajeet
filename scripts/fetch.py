@@ -37,8 +37,10 @@ class Net:
                 data = f.read()
         else:
             headers = {"User-Agent": UA}
-            if self.token and url.startswith("https://api.github.com/"):
-                headers["Authorization"] = f"Bearer {self.token}"
+            if url.startswith("https://api.github.com/"):
+                headers["Accept"] = "application/vnd.github+json"
+                if self.token:
+                    headers["Authorization"] = f"Bearer {self.token}"
             try:
                 with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=30) as r:
                     data = r.read()
@@ -242,12 +244,23 @@ def merge_contrib(parts, today):
 
 def merge_repos(parts):
     """Combine public-repo stats from several accounts."""
-    out = {"public_repos": 0, "stars": 0, "downloads": 0, "repos": {}}
+    out = {
+        "public_repos": 0, "stars": 0, "downloads": 0, "repos": {},
+        "oss_created": 0, "oss_contributed": 0,
+        "oss_created_repos": [], "oss_contributed_repos": [],
+    }
+    created, contributed = set(), set()
     for r in parts:
         out["public_repos"] += r["public_repos"]
         out["stars"] += r["stars"]
         out["downloads"] += r["downloads"]
         out["repos"].update(r.get("repos") or {})
+        created.update(r.get("oss_created_repos") or [])
+        contributed.update(r.get("oss_contributed_repos") or [])
+    out["oss_created_repos"] = sorted(created)
+    out["oss_contributed_repos"] = sorted(contributed)
+    out["oss_created"] = len(created)
+    out["oss_contributed"] = len(contributed)
     return out
 
 
@@ -275,9 +288,73 @@ def years_cache_for(state, user, primary):
 
 
 # ------------------------------------------------------------------ the other sources
-def fetch_repos(net, user, primary=None):
-    """Public, non-fork repos owned by the user: count, stars, release downloads, latest release tag."""
+def _oss_cfg(profile):
+    """Optional profile.oss knobs for what counts as created / which orgs to ignore as work."""
+    oss = profile.get("oss") or {}
+    return {
+        "created_extra": list(oss.get("created_extra") or []),
+        "exclude_repos": set(oss.get("exclude_repos") or []),
+        "exclude_orgs": set(oss.get("exclude_orgs") or ["Scenarix"]),
+        "exclude_contributed": set(oss.get("exclude_contributed") or []),
+    }
+
+
+def _search_items(net, url, name):
+    """GitHub search JSON -> items list; empty on a soft failure so one bad query does not kill the build."""
+    try:
+        data = json.loads(net.get(url, name))
+    except (SourceError, ValueError, TypeError):
+        return []
+    if not isinstance(data, dict):
+        return []
+    return data.get("items") or []
+
+
+def fetch_oss_contributed(net, user, own_logins, exclude_orgs, primary=None, exclude_contributed=None):
+    """Distinct public repos this user touched outside their own accounts / excluded work orgs."""
     primary = primary or user
+    exclude_contributed = set(exclude_contributed or [])
+    found = set()
+
+    def keep(full):
+        if not full or "/" not in full or full in exclude_contributed:
+            return False
+        owner = full.split("/", 1)[0]
+        if owner in own_logins or owner in exclude_orgs:
+            return False
+        return True
+
+    for item in _search_items(
+            net,
+            f"https://api.github.com/search/commits?q=author:{user}&per_page=100",
+            _fixture(user, "oss-commits.json", primary)):
+        repo = item.get("repository") or {}
+        # Skip other people's forks that merely replayed a commit (same SHA mirrored).
+        if repo.get("fork"):
+            continue
+        full = repo.get("full_name") or ""
+        if keep(full):
+            found.add(full)
+
+    for item in _search_items(
+            net,
+            f"https://api.github.com/search/issues?q=author:{user}&per_page=100",
+            _fixture(user, "oss-issues.json", primary)):
+        parts = (item.get("repository_url") or "").rstrip("/").split("/")
+        if len(parts) >= 2:
+            full = f"{parts[-2]}/{parts[-1]}"
+            if keep(full):
+                found.add(full)
+    return found
+
+
+def fetch_repos(net, user, primary=None, profile=None, own_logins=None):
+    """Public, non-fork repos owned by the user: count, stars, release downloads, latest release tag.
+    Also counts open-source repos created (owned public projects + optional maintained forks) and
+    distinct external OSS repos this account contributed to."""
+    primary = primary or user
+    own_logins = set(own_logins or [user])
+    cfg = _oss_cfg(profile or {})
     repos, page = [], 1
     while True:
         raw = "repos.json" if page == 1 else f"repos-{page}.json"
@@ -288,6 +365,7 @@ def fetch_repos(net, user, primary=None):
             break
         page += 1
     own = [r for r in repos if not r["fork"] and not r["private"]]
+    forks = [r for r in repos if r["fork"] and not r["private"]]
     out = {"public_repos": len(own), "stars": sum(r["stargazers_count"] for r in own), "downloads": 0, "repos": {}}
     for r in own:
         rels = json.loads(net.get(
@@ -299,6 +377,26 @@ def fetch_repos(net, user, primary=None):
         out["downloads"] += dl
         out["repos"][f"{user}/{r['name']}"] = {"stars": r["stargazers_count"], "downloads": dl, "tag": tag,
                                                "description": r.get("description") or "", "language": r.get("language") or ""}
+
+    created = set()
+    for r in own:
+        full = f"{user}/{r['name']}"
+        # profile README is not an open-source project
+        if r["name"] == user or full in cfg["exclude_repos"]:
+            continue
+        created.add(full)
+    fork_names = {f"{user}/{r['name']}" for r in forks}
+    for full in cfg["created_extra"]:
+        if full in fork_names or full.split("/", 1)[0] == user:
+            created.add(full)
+
+    contributed = fetch_oss_contributed(
+        net, user, own_logins, cfg["exclude_orgs"], primary=primary,
+        exclude_contributed=cfg["exclude_contributed"])
+    out["oss_created_repos"] = sorted(created)
+    out["oss_contributed_repos"] = sorted(contributed)
+    out["oss_created"] = len(created)
+    out["oss_contributed"] = len(contributed)
     return out
 
 
@@ -460,8 +558,13 @@ def collect(net, profile, today, state=None):
     contrib = merge_contrib(contrib_parts, today)
     contrib_notes = [(f"contributions:{u}", f"github.com/users/{u}/contributions") for u, _ in accounts]
 
+    own_logins = {u for u, _ in accounts}
+
     def fetch_all_repos():
-        return merge_repos([fetch_repos(net, user, primary=primary) for user, _ in accounts])
+        return merge_repos([
+            fetch_repos(net, user, primary=primary, profile=profile, own_logins=own_logins)
+            for user, _ in accounts
+        ])
 
     sources = {
         "repos": fetch_all_repos,

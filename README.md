@@ -5,21 +5,22 @@
 <a href="https://github.com/github-bishwajeet"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-gh-dark.svg"><img src="assets/badge-gh-light.svg" height="44" alt="GitHub"></picture></a>
 <a href="https://github.com/jeet-scenarix-ai"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-work-dark.svg"><img src="assets/badge-work-light.svg" height="44" alt="StudioJadu @jeet-scenarix-ai"></picture></a>
 <a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-site-dark.svg"><img src="assets/badge-site-light.svg" height="44" alt="jeetstack.com"></picture></a>
+<a href="https://www.crio.do/learn/portfolio/bishwajeetk003/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-crio-dark.svg"><img src="assets/badge-crio-light.svg" height="44" alt="Crio"></picture></a>
 </p>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/github-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/github-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/github-dark.svg"><img src="assets/github-light.svg" width="100%" alt="On GitHub across github-bishwajeet + jeet-scenarix-ai: 2,559 contributions in the last year, a 11-day current streak, since 16 Nov, longest streak 26 days, 10,004 contributions since 2018, 5 public repos, 0 stars earned, 0 downloads of my releases."></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/github-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/github-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/github-dark.svg"><img src="assets/github-light.svg" width="100%" alt="On GitHub across github-bishwajeet + jeet-scenarix-ai: 2,570 contributions in the last year, a 11-day current streak, since 16 Nov, longest streak 26 days, 10,015 contributions since 2018, 5 public repos, 5 OSS repos created, 3 OSS repos contributed."></picture>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-6m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-6m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-6m-dark.svg"><img src="assets/graph-6m-light.svg" width="100%" alt="1,464 contributions in the last 6 months"></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-6m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-6m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-6m-dark.svg"><img src="assets/graph-6m-light.svg" width="100%" alt="1,475 contributions in the last 6 months"></picture>
 
-<details><summary>Last 12 months: 2,559 contributions</summary>
+<details><summary>Last 12 months: 2,570 contributions</summary>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-12m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-12m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-12m-dark.svg"><img src="assets/graph-12m-light.svg" width="100%" alt="2,559 contributions in the last 12 months"></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-12m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-12m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-12m-dark.svg"><img src="assets/graph-12m-light.svg" width="100%" alt="2,570 contributions in the last 12 months"></picture>
 
 </details>
 
-<details><summary>2026: 2,416 contributions</summary>
+<details><summary>2026: 2,427 contributions</summary>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2026-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2026-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2026-dark.svg"><img src="assets/graph-2026-light.svg" width="100%" alt="2,416 contributions in 2026"></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2026-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2026-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2026-dark.svg"><img src="assets/graph-2026-light.svg" width="100%" alt="2,427 contributions in 2026"></picture>
 
 </details>
 
@@ -81,9 +82,9 @@
 <a href="https://github.com/jeet-scenarix-ai"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-studiojadu-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-studiojadu-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-studiojadu-dark.svg"><img src="assets/app-studiojadu-light.svg" width="49%" alt="StudioJadu: AI filmmaking and storytelling across story, image, and video workflows. Current role, Senior SWE, @jeet-scenarix-ai."></picture></a>
 <a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-mdware-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-mdware-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-mdware-dark.svg"><img src="assets/app-mdware-light.svg" width="49%" alt="MDware: Commerce integrations connecting products, payments, and operations. Shipped, client work, full-stack."></picture></a>
 <a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-valora-homes-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-valora-homes-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-valora-homes-dark.svg"><img src="assets/app-valora-homes-light.svg" width="49%" alt="Valora Homes: Real-estate platform for homes, listings, and buyer journeys. Shipped, real estate, web app."></picture></a>
-<a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-calgary-lending-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-calgary-lending-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-calgary-lending-dark.svg"><img src="assets/app-calgary-lending-light.svg" width="49%" alt="Calgary Lending: Fintech lending product with reliable APIs and production monitoring. Shipped, lending, production."></picture></a>
+<a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/app-gaesthetic-room-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/app-gaesthetic-room-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/app-gaesthetic-room-dark.svg"><img src="assets/app-gaesthetic-room-light.svg" width="49%" alt="Gaesthetic Room: Clinic operations for appointments, patients, and care workflows. Shipped, healthcare, operations."></picture></a>
 </p>
 
-<p align="center"><sub>more ships: <a href="https://jeetstack.com/">Uprising Homes</a> · <a href="https://jeetstack.com/">Gaesthetic Room</a> · <a href="https://jeetstack.com/">Satnam Floral Design</a> · <a href="https://jeetstack.com/">Merge Community Services</a> · <a href="https://jeetstack.com/">Kaler Contracting</a></sub></p>
+<p align="center"><sub>more ships: <a href="https://jeetstack.com/">Uprising Homes</a> · <a href="https://jeetstack.com/">Calgary Lending</a> · <a href="https://jeetstack.com/">Satnam Floral Design</a> · <a href="https://jeetstack.com/">Merge Community Services</a> · <a href="https://jeetstack.com/">Kaler Contracting</a></sub></p>
 
 <p align="center"><sub>Drawn in a ZazaG-style design system · numbers redrawn every night by a GitHub Action · <a href="https://jeetstack.com/">jeetstack.com</a></sub></p>
