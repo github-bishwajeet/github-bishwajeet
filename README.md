@@ -6,25 +6,25 @@
 <a href="https://jeetstack.com/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/badge-site-dark.svg"><img src="assets/badge-site-light.svg" height="44" alt="jeetstack.com"></picture></a>
 </p>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/github-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/github-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/github-dark.svg"><img src="assets/github-light.svg" width="100%" alt="On GitHub: 16 contributions in the last year, no streak right now, longest streak 26 days, 6,931 contributions since 2018, 5 public repos, 0 stars earned, 0 downloads of my releases."></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/github-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/github-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/github-dark.svg"><img src="assets/github-light.svg" width="100%" alt="On GitHub across github-bishwajeet + jeet-scenarix-ai: 2,559 contributions in the last year, a 11-day current streak, since 16 Nov, longest streak 26 days, 10,004 contributions since 2018, 5 public repos, 0 stars earned, 0 downloads of my releases."></picture>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-6m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-6m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-6m-dark.svg"><img src="assets/graph-6m-light.svg" width="100%" alt="10 contributions in the last 6 months"></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-6m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-6m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-6m-dark.svg"><img src="assets/graph-6m-light.svg" width="100%" alt="1,464 contributions in the last 6 months"></picture>
 
-<details><summary>Last 12 months: 16 contributions</summary>
+<details><summary>Last 12 months: 2,559 contributions</summary>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-12m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-12m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-12m-dark.svg"><img src="assets/graph-12m-light.svg" width="100%" alt="16 contributions in the last 12 months"></picture>
-
-</details>
-
-<details><summary>2026: 14 contributions</summary>
-
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2026-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2026-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2026-dark.svg"><img src="assets/graph-2026-light.svg" width="100%" alt="14 contributions in 2026"></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-12m-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-12m-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-12m-dark.svg"><img src="assets/graph-12m-light.svg" width="100%" alt="2,559 contributions in the last 12 months"></picture>
 
 </details>
 
-<details><summary>2025: 2,025 contributions</summary>
+<details><summary>2026: 2,416 contributions</summary>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2025-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2025-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2025-dark.svg"><img src="assets/graph-2025-light.svg" width="100%" alt="2,025 contributions in 2025"></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2026-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2026-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2026-dark.svg"><img src="assets/graph-2026-light.svg" width="100%" alt="2,416 contributions in 2026"></picture>
+
+</details>
+
+<details><summary>2025: 2,696 contributions</summary>
+
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/graph-2025-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/graph-2025-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/graph-2025-dark.svg"><img src="assets/graph-2025-light.svg" width="100%" alt="2,696 contributions in 2025"></picture>
 
 </details>
 
@@ -70,7 +70,7 @@
 
 </details>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/line-30d-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/line-30d-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/line-30d-dark.svg"><img src="assets/line-30d-light.svg" width="100%" alt="5 contributions in the last 30 days"></picture>
+<picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/line-30d-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/line-30d-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/line-30d-dark.svg"><img src="assets/line-30d-light.svg" width="100%" alt="467 contributions in the last 30 days"></picture>
 
 <picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/whoami-phone-dark.svg"><source media="(max-width: 600px)" srcset="assets/whoami-phone-light.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/whoami-dark.svg"><img src="assets/whoami-light.svg" width="100%" alt="whoami: jeet, senior software engineer, Bengaluru, India. I build AI product workflows, distributed systems, and backend services that ship to production. Now: Senior Software Engineer at StudioJadu — AI filmmaking tools. Open to senior product-engineering roles. Shipping and writing at JeetStack."></picture>
 

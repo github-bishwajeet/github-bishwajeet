@@ -53,7 +53,8 @@ def github_board_phone(t, data):
     s = Svg(440, 534, t, board_label(data))
     s.board()
     s.text(26, 54, "On GitHub", "f700", 30)
-    s.text(414, 52, "redrawn nightly", "m400", 15, "muted", "end")
+    note = "combined" if len((data.get("contrib") or {}).get("accounts") or []) > 1 else "redrawn nightly"
+    s.text(414, 52, note, "m400", 15, "muted", "end")
     # the big one, full width
     sticker(s, 26, 78, 388, 100, FILLS[0], ROT[0])
     s.text(44, 130, cs[0][0], "f700", 50)

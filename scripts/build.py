@@ -58,7 +58,8 @@ def make_assets(data, P):
 def numbers(data, P):
     """(label, value, source) for every number the build uses, printed on every run."""
     c, r = data["contrib"], data["repos"]
-    gh = f"github.com/users/{P['user']}/contributions"
+    accounts = c.get("accounts") or [P["user"]]
+    gh = " + ".join(f"github.com/users/{u}/contributions" for u in accounts)
     cur, best = c["current_streak"], c["longest_streak"]
     v = cards.challenge_view(data.get("challenge"))
     ch = f"{v['title']}: {v['count']}, {v['note']}" if v else "no challenge configured"

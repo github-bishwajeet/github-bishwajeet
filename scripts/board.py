@@ -34,7 +34,9 @@ def board_label(data):
     cur, best = c["current_streak"], c["longest_streak"]
     streak = (f"a {cur['days']}-day current streak, since {short_date(cur['start'])}" if cur["days"] > 0 and cur["start"]
               else "no streak right now")
-    return (f"On GitHub: {fmt(c['last_year'])} contributions in the last year, {streak}, "
+    accounts = c.get("accounts") or []
+    across = f" across {' + '.join(accounts)}" if len(accounts) > 1 else ""
+    return (f"On GitHub{across}: {fmt(c['last_year'])} contributions in the last year, {streak}, "
             f"longest streak {best['days']} days, {fmt(c['all_time'])} contributions since {c['since_year']}, "
             f"{r['public_repos']} public repos, {r['stars']} stars earned, {fmt(r['downloads'])} downloads of my releases.")
 
@@ -68,13 +70,20 @@ def icon(s, kind, x, y, size, fill="pop"):
           f'stroke-linecap="round" stroke-linejoin="round">{parts}</g>')
 
 
+def accounts_note(data):
+    accounts = (data.get("contrib") or {}).get("accounts") or []
+    if len(accounts) <= 1:
+        return f"redrawn every night · {long_date(data['today'])}"
+    return f"combined · {long_date(data['today'])}"
+
+
 def github_board(t, data):
     cs = counters(data)
     W = 880
     s = Svg(W, 340, t, board_label(data))
     s.board()
     s.text(32, 54, "On GitHub", "f700", 30)
-    s.text(848, 52, f"redrawn every night · {long_date(data['today'])}", "m400", 15, "muted", "end")
+    s.text(848, 52, accounts_note(data), "m400", 15, "muted", "end")
     for i in range(4):
         x, y = 32 + i * 208, 78
         sticker(s, x, y, 190, 138, FILLS[i], ROT[i])

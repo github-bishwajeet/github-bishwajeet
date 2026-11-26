@@ -142,11 +142,17 @@ def streaks(days, today):
     return ({"days": cur, "start": iso(start) if start else None, "end": iso(end) if start else None}, best)
 
 
-def fetch_contrib(net, user, created, today, cached_years):
+def _fixture(user, name, primary):
+    """Fixture / cache file name. Primary keeps the old unprefixed names for offline compat."""
+    return name if user == primary else f"{user}-{name}"
+
+
+def fetch_contrib(net, user, created, today, cached_years, primary=None):
     """Returns (contrib dict, years cache). Completed years are read once and kept in the cache."""
+    primary = primary or user
     base = f"https://github.com/users/{user}/contributions"
     try:
-        last = parse_calendar(net.get(base, "contrib-last-year.html"))
+        last = parse_calendar(net.get(base, _fixture(user, "contrib-last-year.html", primary)))
     except CalendarError:
         raise
     except SourceError as e:
@@ -158,7 +164,9 @@ def fetch_contrib(net, user, created, today, cached_years):
             if cached:
                 years[str(y)] = cached
             else:
-                cal = parse_calendar(net.get(f"{base}?from={y}-01-01&to={y}-12-31", f"contrib-{y}.html"))
+                cal = parse_calendar(net.get(
+                    f"{base}?from={y}-01-01&to={y}-12-31",
+                    _fixture(user, f"contrib-{y}.html", primary)))
                 years[str(y)] = {"total": cal["heading"], "days": {d: c for d, c, _ in cal["days"] if c and d.startswith(str(y))}}
             all_days.update(years[str(y)]["days"])
     except SourceError as e:
@@ -182,16 +190,98 @@ def fetch_contrib(net, user, created, today, cached_years):
         "longest_streak": best,
         "grid": grid,
         "days": all_days,        # date -> count, nonzero days only: the cells of every graph
+        "last_days": {d: c for d, c, _ in last["days"]},  # last-year window, zeros included
+        "accounts": [user],
     }
     return contrib, {k: v for k, v in years.items() if int(k) < today.year}
 
 
+def merge_contrib(parts, today):
+    """Sum day counts across accounts; recompute streaks, totals, and the last-year window."""
+    if len(parts) == 1:
+        return parts[0]
+    all_days, last_days = {}, {}
+    accounts = []
+    for c in parts:
+        accounts += c.get("accounts") or []
+        for d, n in c["days"].items():
+            all_days[d] = all_days.get(d, 0) + n
+        for d, n in (c.get("last_days") or {}).items():
+            last_days[d] = last_days.get(d, 0) + n
+    iso = today.isoformat()
+    all_days = {d: n for d, n in all_days.items() if d <= iso and n}
+    last_days = {d: n for d, n in last_days.items() if d <= iso}
+    cur, best = streaks(all_days, today)
+    first = min(last_days) if last_days else min(all_days) if all_days else iso
+    ordered = sorted(last_days.items()) if last_days else []
+    top = max((n for _, n in ordered), default=0)
+    # reuse graphs.level_of scale (1..4 by share of the peak)
+    def lvl(n):
+        if n <= 0 or top <= 0:
+            return 0
+        from math import ceil
+        return min(4, max(1, ceil(4 * n / top)))
+    grid = {
+        "first": first,
+        "counts": [n for _, n in ordered],
+        "levels": "".join(str(lvl(n)) for _, n in ordered),
+    }
+    return {
+        "last_year": sum(last_days.values()),
+        "this_year": sum(n for d, n in all_days.items() if d.startswith(str(today.year))),
+        "all_time": sum(all_days.values()),
+        "since_year": min(c["since_year"] for c in parts),
+        "current_streak": cur,
+        "longest_streak": best,
+        "grid": grid,
+        "days": all_days,
+        "last_days": last_days,
+        "accounts": accounts,
+    }
+
+
+def merge_repos(parts):
+    """Combine public-repo stats from several accounts."""
+    out = {"public_repos": 0, "stars": 0, "downloads": 0, "repos": {}}
+    for r in parts:
+        out["public_repos"] += r["public_repos"]
+        out["stars"] += r["stars"]
+        out["downloads"] += r["downloads"]
+        out["repos"].update(r.get("repos") or {})
+    return out
+
+
+def profile_accounts(profile):
+    """[(user, created_iso)] primary first, then extra_accounts."""
+    primary = profile["user"]
+    accounts = [(primary, profile["created"]["value"])]
+    for extra in profile.get("extra_accounts") or []:
+        user = extra["user"]
+        created = extra["created"]["value"] if isinstance(extra.get("created"), dict) else extra.get("created")
+        if not user or not created or user == primary:
+            continue
+        accounts.append((user, created))
+    return accounts
+
+
+def years_cache_for(state, user, primary):
+    """Per-user year cache; accepts the legacy flat map for the primary account."""
+    years = state.get("years") or {}
+    if user in years and isinstance(years[user], dict) and any(k.isdigit() for k in years[user]):
+        return years[user]
+    if user == primary and years and all(isinstance(k, str) and k.isdigit() for k in years):
+        return years
+    return {}
+
+
 # ------------------------------------------------------------------ the other sources
-def fetch_repos(net, user):
+def fetch_repos(net, user, primary=None):
     """Public, non-fork repos owned by the user: count, stars, release downloads, latest release tag."""
+    primary = primary or user
     repos, page = [], 1
     while True:
-        name = "repos.json" if page == 1 else f"repos-{page}.json"
+        raw = "repos.json" if page == 1 else f"repos-{page}.json"
+        name = _fixture(user, raw, primary)
         batch = json.loads(net.get(f"https://api.github.com/users/{user}/repos?type=owner&per_page=100&page={page}", name))
         repos += batch
         if len(batch) < 100 or page >= 5:
@@ -200,13 +290,15 @@ def fetch_repos(net, user):
     own = [r for r in repos if not r["fork"] and not r["private"]]
     out = {"public_repos": len(own), "stars": sum(r["stargazers_count"] for r in own), "downloads": 0, "repos": {}}
     for r in own:
-        rels = json.loads(net.get(f"https://api.github.com/repos/{user}/{r['name']}/releases?per_page=100", f"releases-{r['name']}.json"))
+        rels = json.loads(net.get(
+            f"https://api.github.com/repos/{user}/{r['name']}/releases?per_page=100",
+            _fixture(user, f"releases-{r['name']}.json", primary)))
         rels = [x for x in rels if not x.get("draft")]
         dl = sum(a["download_count"] for x in rels for a in x.get("assets", []))
         tag = next((x["tag_name"] for x in rels if not x.get("prerelease")), None)
         out["downloads"] += dl
-        out["repos"][r["name"]] = {"stars": r["stargazers_count"], "downloads": dl, "tag": tag,
-                                   "description": r.get("description") or "", "language": r.get("language") or ""}
+        out["repos"][f"{user}/{r['name']}"] = {"stars": r["stargazers_count"], "downloads": dl, "tag": tag,
+                                               "description": r.get("description") or "", "language": r.get("language") or ""}
     return out
 
 
@@ -355,12 +447,26 @@ def collect(net, profile, today, state=None):
     """
     state = state or {}
     saved = state.get("sources", {})
-    user = profile["user"]
-    contrib, years = fetch_contrib(net, user, profile["created"]["value"], today, state.get("years", {}))
+    accounts = profile_accounts(profile)
+    primary = accounts[0][0]
+    contrib_parts, years_by_user = [], {}
+    for user, created in accounts:
+        part, years = fetch_contrib(
+            net, user, created, today,
+            years_cache_for(state, user, primary),
+            primary=primary)
+        contrib_parts.append(part)
+        years_by_user[user] = years
+    contrib = merge_contrib(contrib_parts, today)
+    contrib_notes = [(f"contributions:{u}", f"github.com/users/{u}/contributions") for u, _ in accounts]
+
+    def fetch_all_repos():
+        return merge_repos([fetch_repos(net, user, primary=primary) for user, _ in accounts])
+
     sources = {
-        "repos": lambda: fetch_repos(net, user),
+        "repos": fetch_all_repos,
     }
-    where = {"repos": "api.github.com users/%s/repos and releases" % user}
+    where = {"repos": "api.github.com users/*/repos and releases (%s)" % ", ".join(u for u, _ in accounts)}
     yt = (profile.get("youtube_channel_id") or {}).get("value")
     if yt:
         sources["videos"] = lambda: fetch_videos(net, yt)
@@ -374,7 +480,7 @@ def collect(net, profile, today, state=None):
         sources["challenge"] = lambda: fetch_challenge(net) if challenge_url.endswith("data.js") else {"state": "none"}
         where["challenge"] = challenge_url
     data, notes, fresh = {"today": today.isoformat(), "contrib": contrib, "challenge": {"state": "none"},
-                          "videos": {"videos": []}, "appstore": {}}, [], {}
+                          "videos": {"videos": []}, "appstore": {}}, list(contrib_notes), {}
     # a state.json from before "good" existed: the day it was written is the best date we have
     good = {k: v for k, v in state.get("good", {}).items() if k in sources}
     for k in saved:
@@ -392,7 +498,8 @@ def collect(net, profile, today, state=None):
             data[name] = saved[name]
             origin = f"state.json (live fetch failed: {e})"
         notes.append((name, origin))
+    # keep per-user year caches; drop any legacy flat map once we have the nested form
     new_state = {"fetched": today.isoformat(), "good": good,
                  "sources": {k: v for k, v in {**saved, **fresh}.items() if k in sources},
-                 "years": {**state.get("years", {}), **years}}
+                 "years": {**{u: years_cache_for(state, u, primary) for u, _ in accounts}, **years_by_user}}
     return data, new_state, notes
