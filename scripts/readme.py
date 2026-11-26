@@ -1,7 +1,6 @@
 # README.md from a template, so the numbers in every image's alt text stay current.
-# Every image is a <picture> with a dark <source>. Pictures in PHONE also get phone sources.
-# Source order matters: the browser takes the first one whose media matches, so dark+phone comes
-# first, then phone, then dark, then the light desktop <img>.
+# Always serves the cream/light sticker boards (no dark <source>): GitHub dark mode was swapping
+# in navy boards and hiding the white/cream look. Phone layouts still get the narrow light SVGs.
 from datetime import date
 from html import escape
 
@@ -20,7 +19,7 @@ def line_title(data, today):
 def cache_bust(data):
     """Token embedded in asset filenames so GitHub profile images refresh after redesigns.
     Query strings do not work: /raw/ redirects drop them before raw.githubusercontent.com."""
-    return data["today"].replace("-", "") + "oss"
+    return data["today"].replace("-", "") + "cream"
 
 
 def asset_stem(name, bust=""):
@@ -41,9 +40,7 @@ def picture(name, width, alt, phone=False, bust=""):
     a = asset_stem(name, bust)
     srcs = []
     if phone:
-        srcs.append(f'<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="{a}-phone-dark.svg">')
         srcs.append(f'<source media="(max-width: 600px)" srcset="{a}-phone-light.svg">')
-    srcs.append(f'<source media="(prefers-color-scheme: dark)" srcset="{a}-dark.svg">')
     attr = f'height="{width[1:]}"' if width.startswith("h") else f'width="{width}"'
     return f'<picture>{"".join(srcs)}<img src="{a}-light.svg" {attr} alt="{escape(alt, quote=True)}"></picture>'
 
